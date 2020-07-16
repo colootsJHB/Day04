@@ -10,27 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int		ft_iterative_power(int nb, int power)
 {
-	int		i;
-
-	if (power < 0 || nb == 0 || nb < 0)
+	if (power < 0 || nb == 0)
 	{
 		return (0);
 	}
-	else if (power == 0 && nb > 0)
+	else if (power < 1)
 	{
 		return (1);
 	}
 	else
 		return (power * ft_iterative_power(nb, power -1));
 }
-
-int main (void)
-{
-
-	printf("%d", ft_iterative_power(3,3));
-   return (0);
-}   
