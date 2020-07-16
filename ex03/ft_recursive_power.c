@@ -13,17 +13,20 @@
 
 int	ft_recursive_power(int nb, int power)
 {
-	int		count;
+	int	i;
 	
 	if (power < 0 || nb == 0)
 	{
 		return (0); 
 	}
-	if (power > 0)
+	else if (power == 0 && nb > 0)
 	{
-		count = nb * ft_recursive_power(nb, power -1);
-		return (count);
+		return (1);
 	}
-	else 
-	return (1);
+	while (i < power)
+	{
+		nb *= nb;
+		i++;
+	}
+		return (nb);
 }
